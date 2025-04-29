@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robvey Bandivas Agriculture</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background: #121212;
+            color: white;
+        }
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode header {
+            background: #388E3C;
+        }
+        .logo {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border: 3px solid #4CAF50;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover img {
+            transform: scale(1.1);
+            border-radius: 50%; /* turns into a circle on hover */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #388E3C;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode nav {
+            background: #2C6B2F;
+        }
+        nav button {
+            background: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav button.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        section {
+            padding: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        body.dark-mode .card {
+            background: #333;
+            color: white;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+        }
+        .card img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .card img:hover {
+            transform: scale(1.5);
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode footer {
+            background: #222;
+        }
+        .icon {
+            width: 30px;
+            margin: 0 10px;
+        }
+        @media (max-width: 600px) {
+            nav { flex-direction: column; }
+        }
+        .dark-mode-btn {
+            background-color: #444;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: 0.3s;
+        }
+        .dark-mode-btn:hover {
+            background-color: #222;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="images/logo.jpg" alt="Logo"></div>
+        <h1>Robvey Bandivas </h1>
+    </header>
+    <nav>
+        <button onclick="showSection('plants', this)" class="active">Plants</button>
+        <button onclick="showSection('trees', this)">Trees</button>
+        <button onclick="showSection('about', this)">About Me</button>
+    </nav>
+
+    <!-- PLANTS -->
+    <section id="plants" class="content">
+        <h2>Plants</h2>
+        <div class="grid">
+            <div class="card"><img src="images/tomato.jpg" alt="Tomato"><div>Tomato<br><small>Solanum lycopersicum</small></div></div>
+            <div class="card"><img src="images/carrot.jpg" alt="Carrot"><div>Carrot<br><small>Daucus carota</small></div></div>
+            <div class="card"><img src="images/spinach.webp" alt="Spinach"><div>Spinach<br><small>Spinacia oleracea</small></div></div>
+            <div class="card"><img src="images/pepper.jpg" alt="Pepper"><div>Pepper<br><small>Capsicum annuum</small></div></div>
+            <div class="card"><img src="images/letuce.jpg" alt="Lettuce"><div>Lettuce<br><small>Lactuca sativa</small></div></div>
+            <div class="card"><img src="images/onion.jpg" alt="Onion"><div>Onion<br><small>Allium cepa</small></div></div>
+            <div class="card"><img src="images/garlic.jpg" alt="Garlic"><div>Garlic<br><small>Allium sativum</small></div></div>
+            <div class="card"><img src="images/cabbage.jpg" alt="Cabbage"><div>Cabbage<br><small>Brassica oleracea</small></div></div>
+            <div class="card"><img src="images/corn.webp" alt="Corn"><div>Corn<br><small>Zea mays</small></div></div>
+            <div class="card"><img src="images/eggplant.jpg" alt="Eggplant"><div>Eggplant<br><small>Solanum melongena</small></div></div>
+            <div class="card"><img src="images/okra.jpg" alt="Okra"><div>Okra<br><small>Abelmoschus esculentus</small></div></div>
+            <div class="card"><img src="images/pumpkin.webp" alt="Pumpkin"><div>Pumpkin<br><small>Cucurbita pepo</small></div></div>
+            <div class="card"><img src="images/sweetpotato.png" alt="Sweet Potato"><div>Sweet Potato<br><small>Ipomoea batatas</small></div></div>
+            <div class="card"><img src="images/ginger.jpg" alt="Ginger"><div>Ginger<br><small>Zingiber officinale</small></div></div>
+            <div class="card"><img src="images/taro.webp" alt="Taro"><div>Taro<br><small>Colocasia esculenta</small></div></div>
+            <div class="card"><img src="images/turmeric.jpg" alt="Turmeric"><div>Turmeric<br><small>Curcuma longa</small></div></div>
+            <div class="card"><img src="images/mint.jpg" alt="Mint"><div>Mint<br><small>Mentha</small></div></div>
+            <div class="card"><img src="images/rosemary.jpg" alt="Rosemary"><div>Rosemary<br><small>Salvia rosmarinus</small></div></div>
+        </div>
+    </section>
+
+    <!-- TREES -->
+    <section id="trees" class="content" style="display:none">
+        <h2>Trees</h2>
+        <div class="grid">
+            <div class="card"><img src="images/mango.jpg" alt="Mango"><div>Mango Tree<br><small>Mangifera indica</small></div></div>
+            <div class="card"><img src="images/mahogany.jpg" alt="Mahogany"><div>Mahogany<br><small>Swietenia macrophylla</small></div></div>
+            <div class="card"><img src="images/acacia.webp" alt="Acacia"><div>Acacia<br><small>Acacia auriculiformis</small></div></div>
+            <div class="card"><img src="images/guava.jpg" alt="Guava"><div>Guava Tree<br><small>Psidium guajava</small></div></div>
+            <div class="card"><img src="images/coconut.jpg" alt="Coconut"><div>Coconut<br><small>Cocos nucifera</small></div></div>
+            <div class="card"><img src="images/banana.webp" alt="Banana"><div>Banana Tree<br><small>Musa spp.</small></div></div>
+            <div class="card"><img src="images/avocado.jpg" alt="Avocado"><div>Avocado<br><small>Persea americana</small></div></div>
+            <div class="card"><img src="images/papaya.jpg" alt="Papaya"><div>Papaya<br><small>Carica papaya</small></div></div>
+            <div class="card"><img src="images/jackfruit.jpg" alt="Jackfruit"><div>Jackfruit<br><small>Artocarpus heterophyllus</small></div></div>
+            <div class="card"><img src="images/lanzones.jpg" alt="Lanzones"><div>Lanzones<br><small>Lansium domesticum</small></div></div>
+            <div class="card"><img src="images/santol.jpg" alt="Santol"><div>Santol<br><small>Sandoricum koetjape</small></div></div>
+            <div class="card"><img src="images/durian.jpg" alt="Durian"><div>Durian<br><small>Durio zibethinus</small></div></div>
+            <div class="card"><img src="images/rambutan.webp" alt="Rambutan"><div>Rambutan<br><small>Nephelium lappaceum</small></div></div>
+            <div class="card"><img src="images/neem.jpg" alt="Neem"><div>Neem<br><small>Azadirachta indica</small></div></div>
+            <div class="card"><img src="images/ipil-ipil.jpg" alt="Ipil-ipil"><div>Ipil-ipil<br><small>Leucaena leucocephala</small></div></div>
+            <div class="card"><img src="images/molavee.webp" alt="Molave"><div>Molave<br><small>Vitex parviflora</small></div></div>
+            <div class="card"><img src="images/tamarind.jpg" alt="Tamarind"><div>Tamarind<br><small>Tamarindus indica</small></div></div>
+            <div class="card"><img src="images/calamansi.jpg" alt="Calamansi"><div>Calamansi<br><small>Citrus microcarpa</small></div></div>
+        </div>
+    </section>
+    
+    <!-- ABOUT -->
+    <!-- ABOUT -->
+<section id="about" class="content" style="display:none; text-align: center;">
+    <h2>Contact Me</h2>
+    <p>Connect with me:</p>
+    <div style="margin: 20px 0;">
+        <a href="https://www.facebook.com/profile.php?id=100086729112963" target="_blank">
+            <img src="images/facebook.jpg" alt="Facebook" class="icon">
+        </a>
+        <a href="mailto:youremail@gmail.com">
+            <img src="images/gmail.png" alt="Gmail" class="icon">
+        </a>
+        <a href="tel:+639123456789">
+            <img src="images/call.jpg" alt="Call" class="icon">
+        </a>
+    </div>
+    <p style="max-width: 600px; margin: 0 auto;">
+        As an agriculture student, I am proud to embrace the field of agriculture, humbly working towards a sustainable future for all.
+    </p>
+</section>
+
+    
+    <button class="dark-mode-btn" onclick="toggleDarkMode()">🌓 Dark Mode</button>
+    
+    <footer>
+        &copy; 2025 Robvey Bandivas. All rights reserved.
+    </footer>
+    
+    <script>
+        function showSection(id, button) {
+            document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(id).style.display = 'block';
+            button.classList.add('active');
+        }
+    
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    
